@@ -1,0 +1,12 @@
+POST http://localhost:5000/user
+content-type: application/json
+
+{
+    "username": "dfdfg",
+    "userAge": "1",
+    "userGender": "Female",
+    "userEmail": "dsfds@sfdsf.dsdf",
+    "userPhone": "3333333333",
+    "userDOB": "2024-11-02",
+    "userHobbies": true
+}

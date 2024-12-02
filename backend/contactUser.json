@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1732559077272,
+    "username": "Niveidn",
+    "age": 78,
+    "phone": "7845215784",
+    "email": "hsid@ssadf.lo",
+    "gender": "female",
+    "hobbies": [
+      "Reading",
+      "Traveling"
+    ]
+  },
+  {
+    "id": 1732643835973,
+    "username": "dsaf",
+    "age": 45,
+    "phone": "7878787888",
+    "email": "ssd@sddf.lo",
+    "gender": "female",
+    "hobbies": [
+      "Cooking",
+      "Sports",
+      "Gaming"
+    ]
+  },
+  {
+    "id": 1732985586398,
+    "username": "Nveidn",
+    "age": 32,
+    "phone": "7874851254",
+    "email": "ni@asd.o",
+    "gender": "female",
+    "hobbies": [
+      "Traveling"
+    ]
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1732473953317,
+    "username": "dfdfg",
+    "userAge": "1",
+    "userGender": "Female",
+    "userEmail": "dsfds@sfdsf.dsdf",
+    "userPhone": "3333333333",
+    "userDOB": "2024-11-02",
+    "userHobbies": true
+  },
+  {
+    "id": 1732558614955,
+    "username": "asjdhfljh",
+    "age": 45,
+    "phone": "7845754874",
+    "email": "teste@mail.lom",
+    "gender": "female",
+    "hobbies": [
+      "Reading",
+      "Traveling"
+    ]
+  }
+]

@@ -1,0 +1,8 @@
+.navlink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navlink-active {
+  color: #1976d2;
+}
