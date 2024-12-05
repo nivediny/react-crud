@@ -7,40 +7,54 @@ import {
   TableHead,
   TableRow,
 } from "@mui/material";
-import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const ListTable = ({ data, handleEdit, handleDelete }) => {
+const ListTable = ({ data, handleDelete }) => {
+  const navigate = useNavigate();
+
+  const handleEdit = (item) => {
+    navigate("/user-edit", { state: { item } }); // Pass the selected item's data to the Edit Page
+  };
+
   return (
     <div>
-      <Table>
-        <TableHead>
-          <TableRow>
-            {Object.keys(data[0] || {}).map((column, index) => (
-              <TableCell key={index}>{column}</TableCell>
+      {data && data.length > 0 ? (
+        <Table>
+          <TableHead>
+            <TableRow>
+              {Object.keys(data[0]).map((key) => (
+                <TableCell key={key}>{key}</TableCell>
+              ))}
+              <TableCell>Actions</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {data.map((item) => (
+              <TableRow key={item.id || Math.random()}>
+                {Object.keys(item).map((key) => (
+                  <TableCell key={key}>
+                    {item[key] !== undefined && item[key] !== null
+                      ? typeof item[key] === "object"
+                        ? JSON.stringify(item[key])
+                        : item[key]
+                      : "N/A"}
+                  </TableCell>
+                ))}
+                <TableCell>
+                  <IconButton onClick={() => handleEdit(item)}>
+                    <Edit />
+                  </IconButton>
+                  <IconButton onClick={() => handleDelete(item.id)}>
+                    <Delete />
+                  </IconButton>
+                </TableCell>
+              </TableRow>
             ))}
-            <TableCell>Actions</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-        {data.map((item) => (
-          <TableRow key={item.id}>
-            {/* Dynamically render cells based on object values */}
-            {Object.keys(item).map((key, index) => (
-              <TableCell key={index}>{item[key]}</TableCell>
-            ))}
-            {/* Static Actions cell */}
-            <TableCell>
-              <IconButton onClick={() => handleEdit(item)}>
-                <Edit />
-              </IconButton>
-              <IconButton onClick={() => handleDelete(item.id)}>
-                <Delete />
-              </IconButton>
-            </TableCell>
-          </TableRow>
-        ))}
-      </TableBody>
-      </Table>
+          </TableBody>
+        </Table>
+      ) : (
+        <p>No data available</p>
+      )}
     </div>
   );
 };
